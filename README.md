@@ -7,6 +7,6 @@ Semicolon;에서 개발한 교내 프로젝트 전용 디자인 시스템입니�
 // Package.swift
 
 dependencies: [
-    .package(url: "https://github.com/semicolonDSM/SemicolonDesign_iOS.git", from: "0.1.0")
+    .package(url: "https://github.com/semicolonDSM/SemicolonDesign_iOS.git", from: "0.1.1")
 ]
 ```
