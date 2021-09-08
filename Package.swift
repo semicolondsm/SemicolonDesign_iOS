@@ -17,6 +17,10 @@ let package = Package(
     targets: [
         .target(
             name: "SemicolonDesign",
-            dependencies: []),
+            dependencies: [
+                "SnapKit",
+                "Then"
+            ]
+        ),
     ]
 )
