@@ -9,34 +9,34 @@ import UIKit
 
 public extension UIColor {
     struct primary {
-        static var purple = { (_ hsb: HSB) -> UIColor in
+        public static var purple = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Purple\(hsb.rawValue)")!
         }
-        static var grey = { (_ hsb: HSB) -> UIColor in
+        public static var grey = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Grey\(hsb.rawValue)")!
         }
     }
     struct secondary {
-        static var indigo = { (_ hsb: HSB) -> UIColor in
+        public static var indigo = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Indigo\(hsb.rawValue)")!
         }
-        static var yellow = { (_ hsb: HSB) -> UIColor in
+        public static var yellow = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Yellow\(hsb.rawValue)")!
         }
     }
     struct System {
-        static var red = { (_ hsb: HSB) -> UIColor in
+        public static var red = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Red\(hsb.rawValue)")!
         }
-        static var green = { (_ hsb: HSB) -> UIColor in
+        public static var green = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Green\(hsb.rawValue)")!
         }
-        static var blue = { (_ hsb: HSB) -> UIColor in
+        public static var blue = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Blue\(hsb.rawValue)")!
         }
     }
 
-    internal enum HSB: Int {
+    enum HSB: Int {
         case _50 = 50
         case _100 = 100
         case _200 = 200
