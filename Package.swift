@@ -5,13 +5,18 @@ import PackageDescription
 
 let package = Package(
     name: "SemicolonDesign",
+    platforms: [
+        .iOS(.v12),
+        .macOS(.v10_12),
+        .watchOS(.v6)
+    ],
     products: [
         .library(
             name: "SemicolonDesign",
             targets: ["SemicolonDesign"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.1")
+        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.1"),
         .package(url: "https://github.com/devxoul/Then", from: "2.7.0")
     ],
     targets: [
@@ -20,7 +25,9 @@ let package = Package(
             dependencies: [
                 "SnapKit",
                 "Then"
-            ]
-        ),
+            ],
+            path: "Sources",
+            resources: [.process("Resources")]
+        )
     ]
 )
