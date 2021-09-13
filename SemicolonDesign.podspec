@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = '12.0'
   spec.source_files  = 'Sources/'
   spec.resource_bundle = {
-    spec.name => ['Resources/']
+    spec.name => ['Resources/*']
   }
 
   spec.dependency 'SnapKit', '~> 5.0.1'
