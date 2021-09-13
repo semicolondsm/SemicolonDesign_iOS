@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'SemicolonDesign'
-  spec.version          = '0.2.1'
+  spec.version          = ENV['LIB_VERSION']
   spec.summary          = 'Semicolon; design system'
   spec.description      = 'Semicolon;에서 개발한 교내 프로젝트 전용 디자인 시스템입니다.'
   spec.homepage         = 'https://github.com/semicolonDSM/SemicolonDesign_iOS'
