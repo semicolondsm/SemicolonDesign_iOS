@@ -12,8 +12,8 @@ public extension UIColor {
         public static var purple = { (_ hsb: HSB) -> UIColor in
             return UIColor(named: "Purple\(hsb.rawValue)")!
         }
-        public static var grey = { (_ hsb: HSB) -> UIColor in
-            return UIColor(named: "Grey\(hsb.rawValue)")!
+        public static var gray = { (_ hsb: HSB) -> UIColor in
+            return UIColor(named: "Gray\(hsb.rawValue)")!
         }
     }
     struct secondary {
