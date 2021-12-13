@@ -1,5 +1,5 @@
 //
-//  Typography.swift
+//  Font.swift
 //  SemicolonDesign
 //
 //  Created by 김수완 on 2021/12/10.
