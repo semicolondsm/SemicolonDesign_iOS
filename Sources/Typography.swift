@@ -9,6 +9,14 @@ import UIKit
 
 extension UIFont {
 
+    static func notoSans(type: NotoSansType, size: CGFloat) -> UIFont {
+        guard let font = UIFont(name: type.name, size: size) else {
+            if type == .bold { return .boldSystemFont(ofSize: size) }
+            else { return .systemFont(ofSize: size) }
+        }
+        return font
+    }
+
     public enum NotoSansType {
         case bold
         case medium
