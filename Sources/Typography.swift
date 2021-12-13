@@ -35,3 +35,24 @@ extension UIFont {
     }
 
 }
+
+extension UIFont {
+
+    static let title1 = notoSans(type: .bold, size: 40)
+    static let title2 = notoSans(type: .bold, size: 36)
+    static let title3 = notoSans(type: .bold, size: 32)
+
+    static let subtitle1 = notoSans(type: .medium, size: 32)
+    static let subtitle2 = notoSans(type: .medium, size: 28)
+    static let subtitle3 = notoSans(type: .medium, size: 24)
+    static let subtitle4 = notoSans(type: .medium, size: 20)
+
+    static let body1 = notoSans(type: .reqular, size: 16)
+    static let body2 = notoSans(type: .reqular, size: 14)
+    static let body3 = notoSans(type: .reqular, size: 12)
+
+    static let bottom = notoSans(type: .reqular, size: 14)
+
+    static let caption = notoSans(type: .reqular, size: 12)
+
+}
