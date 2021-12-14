@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SCTextView: UILabel {
+open class SCTextView: UILabel {
     
-    override var text: String? {
+    open override var text: String? {
         get {
             return super.text
         }
@@ -25,7 +25,7 @@ class SCTextView: UILabel {
         }
     }
 
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)!
         self.numberOfLines = 0
     }
