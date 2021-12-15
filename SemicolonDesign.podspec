@@ -9,9 +9,9 @@ Pod::Spec.new do |spec|
   spec.author           = { 'semicolondsmkr' => 'kimxwan0319@naver.com' }
   spec.source           = { :git => 'https://github.com/semicolonDSM/SemicolonDesign_iOS.git', :tag => spec.version.to_s }
   spec.ios.deployment_target = '12.0'
-  spec.source_files  = 'Sources/'
+  spec.source_files  = 'SemicolonDesign/Sources/'
   spec.resource_bundle = {
-    spec.name => ['Resources/*']
+    spec.name => ['SemicolonDesign/Resources/*']
   }
 
   spec.dependency 'SnapKit', '~> 5.0.1'

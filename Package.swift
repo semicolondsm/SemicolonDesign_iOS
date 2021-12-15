@@ -24,8 +24,8 @@ let package = Package(
                 "SnapKit",
                 "Then"
             ],
-            path: "Sources",
-            resources: [.process("Resources")]
+            path: "SemicolonDesign",
+            resources: [.copy("Resources")]
         )
     ]
 )
