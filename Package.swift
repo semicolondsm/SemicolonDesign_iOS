@@ -13,17 +13,9 @@ let package = Package(
             name: "SemicolonDesign",
             targets: ["SemicolonDesign"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/SnapKit/SnapKit.git", from: "5.0.1"),
-        .package(url: "https://github.com/devxoul/Then", from: "2.7.0")
-    ],
     targets: [
         .target(
             name: "SemicolonDesign",
-            dependencies: [
-                "SnapKit",
-                "Then"
-            ],
             path: "SemicolonDesign",
             resources: [.copy("Resources")]
         )

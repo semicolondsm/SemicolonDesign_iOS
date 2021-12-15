@@ -14,8 +14,5 @@ Pod::Spec.new do |spec|
     spec.name => ['SemicolonDesign/Resources/*']
   }
 
-  spec.dependency 'SnapKit', '~> 5.0.1'
-  spec.dependency 'Then', '~> 2.7.0'
-
   spec.swift_version = '5.0'
 end
