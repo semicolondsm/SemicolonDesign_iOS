@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "SemicolonDesign",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v14),
+        .macOS(.v11)
     ],
     products: [
         .library(
