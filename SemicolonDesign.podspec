@@ -10,6 +10,11 @@ Pod::Spec.new do |spec|
   spec.source           = { :git => 'https://github.com/semicolonDSM/SemicolonDesign_iOS.git', :tag => spec.version.to_s }
   spec.ios.deployment_target = '14.0'
   spec.source_files  = 'SemicolonDesign/Sources/**/*'
+  
+  spec.info_plist = {
+    'CFBundleIdentifier' => 'org.cocoapods.SemicolonDesign'
+  }
+  spec.resources = ['SemicolonDesign/Resources/**/*']
   spec.resource_bundle = {
     spec.name => ['SemicolonDesign/Resources/**/*']
   }
