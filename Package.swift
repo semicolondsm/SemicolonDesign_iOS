@@ -12,13 +12,14 @@ let package = Package(
     products: [
         .library(
             name: "SemicolonDesign",
+            type: .dynamic,
             targets: ["SemicolonDesign"]),
     ],
     targets: [
         .target(
             name: "SemicolonDesign",
             path: "SemicolonDesign",
-            resources: [.copy("Resources")]
+            resources: [.process("Resources")]
         )
     ]
 )
