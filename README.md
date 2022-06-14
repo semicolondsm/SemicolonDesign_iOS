@@ -22,20 +22,6 @@ $ make generate
 ## Installation
 
 
-### [CocoaPods](https://guides.cocoapods.org/using/using-cocoapods.html)
-```ruby
-# Podfile
-use_frameworks!
-
-target 'YOUR_TARGET_NAME' do
-    pod 'SemicolonDesign', '0.3.3'
-end
-```
-Replace `YOUR_TARGET_NAME` and then, in the `Podfile` directory, type:
-```bash
-$ pod install
-```
-
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 ```swift
 // Package.swift
