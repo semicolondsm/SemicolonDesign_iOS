@@ -1,5 +1,5 @@
 import Foundation
 
 public extension Bundle {
-    static var sdBundle: Bundle { .main }
+    static var sdBundle: Bundle { .module }
 }
