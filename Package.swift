@@ -18,8 +18,7 @@ let package = Package(
     targets: [
         .target(
             name: "SemicolonDesign",
-            path: "SemicolonDesign",
-            resources: [.process("Resources")]
+            path: "SemicolonDesign"
         )
     ]
 )
