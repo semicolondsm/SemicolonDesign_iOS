@@ -1,9 +1,9 @@
-#if os(iOS)
+#if os(macOS)
 
 import SwiftUI
-import UIKit
+import AppKit
 
-extension UIColor {
+extension NSColor {
     var color: Color {
         let colorComponents = self.cgColor.components!
         return Color(
@@ -13,6 +13,5 @@ extension UIColor {
         )
     }
 }
-
 
 #endif
