@@ -17,10 +17,7 @@ public struct SmallButton: View {
                         .frame(width: 16, height: 16)
                         .tint(type.textColor(isDisabled: isDisabled))
                 }
-                Text(text)
-                    .font(.system(size: 14))
-                    .frame(height: 20)
-                    .foregroundColor(type.textColor(isDisabled: isDisabled))
+                SDText(text, type: .button2, textColor: type.textColor(isDisabled: isDisabled))
                 if case .rightIcon(let image) = icon {
                     image
                         .frame(width: 16, height: 16)
