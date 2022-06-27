@@ -10,7 +10,7 @@ public enum SmallButtonType {
     case link
 }
 
-public extension SmallButtonType {
+extension SmallButtonType {
 
     func backgroundColor(isDisabled: Bool) -> Color {
         switch self {
