@@ -31,3 +31,10 @@ public struct SDText: View {
             .foregroundColor(textColor)
     }
 }
+
+// MARK: Preview
+struct SDText_Preview: PreviewProvider {
+    static var previews: some View {
+        SDTextPreview()
+    }
+}
