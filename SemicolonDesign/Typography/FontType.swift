@@ -22,7 +22,7 @@ public enum FontType {
 
 }
 
-public extension FontType {
+extension FontType {
 
     var fontSize: CGFloat {
         switch self {

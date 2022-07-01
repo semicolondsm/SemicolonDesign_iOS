@@ -6,7 +6,7 @@ public struct SDText: View {
     var textColor: Color
     var font: Font
 
-    init(_ content: String, type: FontType, textColor: Color) {
+    public init(_ content: String, type: FontType, textColor: Color) {
         self.content = content
         self.type = type
         self.textColor = textColor
@@ -17,7 +17,7 @@ public struct SDText: View {
             self.font = .system(size: type.fontSize, weight: type.fontWeight)
         }
     }
-    init(_ content: String, type: FontType) {
+    public init(_ content: String, type: FontType) {
         self.content = content
         self.type = type
         self.font = .system(size: type.fontSize, weight: type.fontWeight)
