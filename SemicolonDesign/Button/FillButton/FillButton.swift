@@ -6,7 +6,7 @@ public struct FillButton: View {
     var action: () -> ()
     var type: FillButtonType = .default
 
-    var body: some View {
+    public var body: some View {
         Button(action: action) {
             SDText(text, type: .button1, textColor: .GrayScale.gray0)
                 .frame(maxWidth: .infinity)
