@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FillButton: View {
+public struct FillButton: View {
 
     var text: String
     var action: () -> ()
