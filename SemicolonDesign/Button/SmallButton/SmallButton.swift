@@ -4,10 +4,10 @@ public struct SmallButton: View {
 
     @Binding var isLoading: Bool
     @Binding var isDisabled: Bool
-    var text: String
-    var action: () -> ()
-    var icon: SmallButtonIconType = .none
-    var type: SmallButtonType = .default
+    public var text: String
+    public var action: () -> ()
+    public var icon: SmallButtonIconType = .none
+    public var type: SmallButtonType = .default
 
     public var body: some View {
         Button(action: action) {

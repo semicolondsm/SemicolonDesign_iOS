@@ -2,9 +2,9 @@ import SwiftUI
 
 public struct FillButton: View {
 
-    var text: String
-    var action: () -> ()
-    var type: FillButtonType = .default
+    public var text: String
+    public var action: () -> ()
+    public var type: FillButtonType = .default
 
     public var body: some View {
         Button(action: action) {
