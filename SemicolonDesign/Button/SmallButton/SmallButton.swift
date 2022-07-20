@@ -4,10 +4,26 @@ public struct SmallButton: View {
 
     @Binding var isLoading: Bool
     @Binding var isDisabled: Bool
-    public var text: String
-    public var action: () -> ()
-    public var icon: SmallButtonIconType = .none
-    public var type: SmallButtonType = .default
+    var text: String
+    var action: () -> ()
+    var icon: SmallButtonIconType
+    var type: SmallButtonType
+
+    public init(
+        isLoading: Binding<Bool>,
+        isDisabled: Binding<Bool>,
+        text: String,
+        action: @escaping () -> (),
+        icon: SmallButtonIconType = .none,
+        type: SmallButtonType = .default
+    ) {
+        self._isLoading = isLoading
+        self._isDisabled = isDisabled
+        self.text = text
+        self.action = action
+        self.icon = icon
+        self.type = type
+    }
 
     public var body: some View {
         Button(action: action) {
