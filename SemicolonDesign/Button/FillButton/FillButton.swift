@@ -23,8 +23,8 @@ public struct FillButton: View {
                 .padding([.top, .bottom], 14)
                 .background(Color.Primary.purple400)
         }
-        .cornerRadius(type == .rounded ? 16: 0)
-        .padding(type == .rounded ? 12: 0)
+        .cornerRadius(type == .rounded ? 12: 0)
+        .padding(type == .rounded ? 16: 0)
     }
 }
 
