@@ -33,7 +33,7 @@ public struct SmallButton: View {
                         .frame(width: 16, height: 16)
                         .tint(type.textColor(isDisabled: isDisabled))
                 }
-                SDText(text, type: .button2, textColor: type.textColor(isDisabled: isDisabled))
+                SDText(text, type: .body2, textColor: type.textColor(isDisabled: isDisabled))
                 if case .rightIcon(let image) = icon {
                     image
                         .frame(width: 16, height: 16)

@@ -36,5 +36,6 @@ public struct SDText: View {
 struct SDText_Preview: PreviewProvider {
     static var previews: some View {
         SDTextPreview()
+            .previewDevice("iPad mini (6th generation)")
     }
 }
