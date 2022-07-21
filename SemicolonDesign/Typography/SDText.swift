@@ -4,7 +4,7 @@ public struct SDText: View {
     var content: String
     var type: FontType
     var textColor: Color
-    var font: Font
+    var font: UIFont
 
     public init(_ content: String, type: FontType, textColor: Color) {
         self.content = content
@@ -12,22 +12,23 @@ public struct SDText: View {
         self.textColor = textColor
 
         if textColor == .GrayScale.gray0 && type.fontWeight == .regular {
-            self.font = .system(size: type.fontSize, weight: .medium)
+            self.font = .systemFont(ofSize: type.fontSize, weight: .medium)
         } else {
-            self.font = .system(size: type.fontSize, weight: type.fontWeight)
+            self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)
         }
     }
     public init(_ content: String, type: FontType) {
         self.content = content
         self.type = type
-        self.font = .system(size: type.fontSize, weight: type.fontWeight)
+        self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)
         self.textColor = type.defaultColor
     }
 
     public var body: some View {
         Text(content)
-            .font(font)
-            .frame(height: type.lineHeight)
+            .font(Font(font))
+            .lineSpacing(type.lineHeight - font.lineHeight)
+            .padding(.vertical, (type.lineHeight - font.lineHeight) / 2)
             .foregroundColor(textColor)
     }
 }

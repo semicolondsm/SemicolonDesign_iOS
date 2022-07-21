@@ -38,7 +38,7 @@ extension FontType {
         }
     }
 
-    var fontWeight: Font.Weight {
+    var fontWeight: UIFont.Weight {
         switch self {
 
         case .heading1, .heading2, .heading3: return .bold
