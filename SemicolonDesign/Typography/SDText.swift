@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 public extension Text {
     func sdText(type: FontType, textColor: Color) -> some View {
