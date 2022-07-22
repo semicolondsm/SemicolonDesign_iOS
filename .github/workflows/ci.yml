@@ -18,4 +18,9 @@ jobs:
       with:
         fetch-depth: 2
     - name: build
-      run: swift build
+      run: |
+       swift build -v \
+        -Xswiftc "-sdk" \
+        -Xswiftc "`xcrun --sdk iphonesimulator --show-sdk-path`" \
+        -Xswiftc "-target" \
+        -Xswiftc "x86_64-apple-ios15.0-simulator"
