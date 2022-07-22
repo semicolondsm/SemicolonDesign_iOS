@@ -1,13 +1,20 @@
 import SwiftUI
 
-public struct SDText: View {
-    var content: String
+public extension Text {
+    func sdText(type: FontType, textColor: Color) -> some View {
+        ModifiedContent(content: self, modifier: SDText(type: type, textColor: textColor))
+    }
+    func sdText(type: FontType) -> some View {
+        ModifiedContent(content: self, modifier: SDText(type: type))
+    }
+}
+
+struct SDText: ViewModifier {
     var type: FontType
     var textColor: Color
     var font: UIFont
 
-    public init(_ content: String, type: FontType, textColor: Color) {
-        self.content = content
+    init(type: FontType, textColor: Color) {
         self.type = type
         self.textColor = textColor
 
@@ -17,20 +24,20 @@ public struct SDText: View {
             self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)
         }
     }
-    public init(_ content: String, type: FontType) {
-        self.content = content
+    init(type: FontType) {
         self.type = type
         self.font = .systemFont(ofSize: type.fontSize, weight: type.fontWeight)
         self.textColor = type.defaultColor
     }
 
-    public var body: some View {
-        Text(content)
+    func body(content: Content) -> some View {
+        content
             .font(Font(font))
             .lineSpacing(type.lineHeight - font.lineHeight)
             .padding(.vertical, (type.lineHeight - font.lineHeight) / 2)
             .foregroundColor(textColor)
     }
+
 }
 
 // MARK: Preview

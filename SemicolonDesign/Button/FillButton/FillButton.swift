@@ -18,7 +18,7 @@ public struct FillButton: View {
 
     public var body: some View {
         Button(action: action) {
-            SDText(text, type: .body1, textColor: .GrayScale.gray0)
+            Text(text).sdText(type: .body1, textColor: .GrayScale.gray0)
                 .frame(maxWidth: .infinity)
                 .padding([.top, .bottom], 14)
                 .background(Color.Primary.purple400)
