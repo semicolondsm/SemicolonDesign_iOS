@@ -10,8 +10,8 @@ public struct SmallButton: View {
     var type: SmallButtonType
 
     public init(
-        isLoading: Binding<Bool>,
-        isDisabled: Binding<Bool>,
+        isLoading: Binding<Bool> = .constant(false),
+        isDisabled: Binding<Bool> = .constant(false),
         text: String,
         action: @escaping () -> (),
         icon: SmallButtonIconType = .none,
@@ -49,9 +49,11 @@ public struct SmallButton: View {
             .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
             .background(type.backgroundColor(isDisabled: isDisabled))
             .cornerRadius(5)
-            .overlay { RoundedRectangle(cornerRadius: 5).stroke(
-                type.borderColor
-            )}
+            .overlay {
+                if !isDisabled {
+                    RoundedRectangle(cornerRadius: 5).stroke(type.borderColor)
+                }
+            }
         }
         .padding(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
         .disabled(isDisabled)
