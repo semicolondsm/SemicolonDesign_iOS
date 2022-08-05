@@ -43,7 +43,7 @@ extension SmallButtonType {
     var borderColor: Color {
         switch self {
         case .defaultWithBorder:
-            return .GrayScale.gray50
+            return .GrayScale.gray300
         default:
             return .clear
         }
