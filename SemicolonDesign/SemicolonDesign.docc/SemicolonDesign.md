@@ -30,6 +30,10 @@
 
 - <doc:Getting-Started>
 
+### Color
+
+- <doc:Colors>
+
 ### Typography
 
 - <doc:SDText>
