@@ -5,7 +5,7 @@
 
 > SemicolonDesign은 SPM을 단독 지원중입니다.
 
-### Swift Package Manager
+#### Swift Package Manager
 
 ```swift
 // Package.swift

@@ -2,10 +2,13 @@
 
 ![SD](SemicolonDesignCover)
 
+##
+> SemicolonDesign의 iOS SDK는 SwiftUI로 작성 되었습니다.
+
 ## SemicolonDesign
 
 **SemicolonDesign**은 *Semicolon*에서 개발한 교내 프로젝트 전용 **디자인 시스템**입니다.
-교내에서 이뤄지는 **개인/팀/동아리 프로젝트** 뿐만 아니라 **해커톤,JAVA 프로젝트** 등에서도 사용 할 수 있도록 만들어진 **디자인 시스템**으로 *Semicolon*에 팀원이라면 바로 사용 가능합니다. 그렇다면  사용에 앞서 **디자인 시스템**이 무엇인지 간단히 알아 봅시다.
+교내에서 이뤄지는 **개인/팀/동아리 프로젝트** 뿐만 아니라 **해커톤, JAVA 프로젝트** 등에서도 사용 할 수 있도록 만들어진 **디자인 시스템**으로 *Semicolon*에 팀원이라면 바로 사용 가능합니다. 그렇다면  사용에 앞서 **디자인 시스템**이 무엇인지 간단히 알아 봅시다.
 
 ## 디자인 시스템이란
 
@@ -20,3 +23,17 @@
 
 * [Github](https://github.com/semicolondsm/SemicolonDesign_iOS)
 * [Notion](https://www.notion.so/semicolon-dsm/Semicolon-Design-2021-e9e23681223a4070bf2ad004541864e8)
+
+## Topics
+
+### Getting Started
+
+- <doc:Getting-Started>
+
+### Typography
+
+- <doc:SDText>
+
+### Component
+
+- <doc:Component>
