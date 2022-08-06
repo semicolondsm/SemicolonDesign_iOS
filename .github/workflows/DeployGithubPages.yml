@@ -1,0 +1,34 @@
+name: Deploy Github Pages
+
+on:
+  push:
+    branches:
+      - main
+    
+jobs:
+  hosting:
+    runs-on: macos-12
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '13.3'
+    - name: setup git
+      run: |
+        git config --global user.name 'semicolondsmkr'
+        git config --global user.email 'semicolondsm@gmail.com'
+        git config pull.rebase false
+        git pull origin Deploy_Docc
+        git checkout -t origin/Deploy_Docc
+        git merge main
+    - name: Generate Project
+      run: make generate
+    - name: Archive Docc
+      run: make archiveDocc
+    - name: git commit & push
+      run: |
+        git add -A
+        git commit -m "📝 :: Updated docc"
+        git push
