@@ -23,8 +23,6 @@ jobs:
         git pull origin Deploy_Docc
         git checkout -t origin/Deploy_Docc
         git merge main
-    - name: Generate Project
-      run: make generate
     - name: Archive Docc
       run: make archiveDocc
     - name: git commit & push
