@@ -1,13 +1,19 @@
 # Colors
 
-색
+SemicolonDesign에서 사용하는 색상들
+![ColorTable](ColorTable)
 
-## Overview
+## Useage
 
-<!--@START_MENU_TOKEN@-->Text<!--@END_MENU_TOKEN@-->
+상단의 색상 표를 참고하여 아래 코드와 같이 사용하시면 됩니다.
+```swift
 
-## Topics
+Color.Primary.purple400
 
-### <!--@START_MENU_TOKEN@-->Group<!--@END_MENU_TOKEN@-->
+Color.System.red800
 
-- <!--@START_MENU_TOKEN@-->``Symbol``<!--@END_MENU_TOKEN@-->
+Color.GrayScale.gray50
+
+```
+
+> GrayScale은 기본적으로 `.gray~~`로 접근합니다.
