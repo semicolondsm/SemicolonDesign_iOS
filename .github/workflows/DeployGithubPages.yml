@@ -20,8 +20,8 @@ jobs:
         git config --global user.name 'semicolondsmkr'
         git config --global user.email 'semicolondsm@gmail.com'
         git config pull.rebase false
-        git pull origin Deploy_Docc
         git checkout -t origin/Deploy_Docc
+        git pull origin Deploy_Docc
         git merge main
     - name: Archive Docc
       run: make archiveDocc
