@@ -13,6 +13,10 @@ SemicolonDesign의 UI 컴포넌트들
 - <doc:FillButton>
 - <doc:SmallButton>
 
+### ImageViewer
+
+- <doc:SDImageViewer>
+
 ### TextField
 
 - <doc:SDTextField>
