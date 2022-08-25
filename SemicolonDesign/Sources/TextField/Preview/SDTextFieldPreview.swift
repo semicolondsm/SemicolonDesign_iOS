@@ -25,8 +25,8 @@ struct SDTextFieldPreview: View {
                 title: "필드 레이블",
                 placeholder: "플레이스 홀더",
                 help: "도움말 텍스트",
-                text: $text,
-                errorMessage: .constant("오류 메세지 텍스트")
+                text: .constant("입력 텍스트"),
+                isSecure: true
             )
             .padding(.horizontal, 18)
 
@@ -35,10 +35,18 @@ struct SDTextFieldPreview: View {
                 placeholder: "플레이스 홀더",
                 help: "도움말 텍스트",
                 text: $text,
-                isDisableed: .constant(true)
+                errorMessage: "오류 메세지 텍스트"
             )
             .padding(.horizontal, 18)
 
+            SDTextField(
+                title: "필드 레이블",
+                placeholder: "플레이스 홀더",
+                help: "도움말 텍스트",
+                text: $text,
+                isDisabled: true
+            )
+            .padding(.horizontal, 18)
         }
     }
 }
