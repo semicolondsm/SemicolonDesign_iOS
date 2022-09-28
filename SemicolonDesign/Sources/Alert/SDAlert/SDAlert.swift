@@ -20,7 +20,7 @@ public struct SDAlert: View {
 
     public init(
         title: String,
-        content: String,
+        content: String = "",
         button1: (text: String, action: () -> ()),
         button2: (text: String, action: () -> ())
     ) {
@@ -38,12 +38,19 @@ public struct SDAlert: View {
                     self.dismissAlert()
                 }
 
-            VStack(spacing: 10) {
-                Text(title).sdText(type: .heading5)
-                Text(content)
-                    .sdText(type: .body4)
-                    .multilineTextAlignment(.center)
-                HStack(spacing: 13) {
+            VStack(
+                alignment: content.isEmpty ? .leading : .center,
+                spacing: content.isEmpty ? 20 : 10
+            ) {
+                Text(title)
+                    .sdText(type: content.isEmpty ? .heading6 : .heading5)
+                    .multilineTextAlignment(content.isEmpty ? .leading : .center)
+                if !content.isEmpty {
+                    Text(content)
+                        .sdText(type: .body4)
+                        .multilineTextAlignment(.center)
+                }
+                HStack(spacing: 12) {
                     Button(action: {
                         self.button1.action()
                         self.dismissAlert()
@@ -66,8 +73,7 @@ public struct SDAlert: View {
                     })
                 }
             }
-            .padding(.top, 15)
-            .padding([.horizontal, .bottom], 20)
+            .padding(20)
             .background(.white)
             .cornerRadius(12)
             .shadow(color: .black.opacity(0.1), radius: 12, x: 4, y: 4)
