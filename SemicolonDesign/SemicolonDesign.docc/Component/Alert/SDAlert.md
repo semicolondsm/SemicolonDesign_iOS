@@ -31,3 +31,7 @@ struct AnyView: View {
 }
 
 ```
+
+
+> 다음 그림들과 같이 content가 있을때와 없을때의 UI 차이가 있습니다. 
+> ![DifferentSDAlerts](DifferentSDAlerts)
