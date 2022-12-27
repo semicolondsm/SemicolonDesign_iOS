@@ -5,7 +5,7 @@ public struct Selector: View {
     var selectedIndex: Binding<Int>
     var buttonTitles: [String]
 
-    init(selectedIndex: Binding<Int>, buttonTitles: [String]) {
+    public init(selectedIndex: Binding<Int>, buttonTitles: [String]) {
         self.selectedIndex = selectedIndex
         self.buttonTitles = buttonTitles
         UIScrollView.appearance().bounces = false
