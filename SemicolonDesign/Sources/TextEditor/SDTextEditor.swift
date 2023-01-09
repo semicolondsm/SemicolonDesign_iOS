@@ -1,7 +1,7 @@
 import SwiftUI
 
 
-struct SDTextEditor: View {
+public struct SDTextEditor: View {
     let placeholder: String
     @Binding var text: String
 
