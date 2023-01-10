@@ -1,11 +1,10 @@
 import SwiftUI
 
-
 public struct SDTextEditor: View {
     let placeholder: String
     @Binding var text: String
 
-    init(placeholder: String, text: Binding<String>) {
+    public init(placeholder: String, text: Binding<String>) {
         self.placeholder = placeholder
         self._text = text
         UITextView.appearance().backgroundColor = .clear
