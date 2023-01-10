@@ -11,7 +11,7 @@ public struct SDTextEditor: View {
         UITextView.appearance().backgroundColor = .clear
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack(alignment: .topLeading) {
             if text.isEmpty {
                 Text(placeholder)
