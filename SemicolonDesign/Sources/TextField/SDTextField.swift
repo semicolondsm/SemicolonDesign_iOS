@@ -39,12 +39,14 @@ public struct SDTextField: View {
             if !isSecure {
                 TextField(placeholder, text: $text)
                     .modifier(SDTextFieldModifier(
+                        text: text,
                         errorMessage: errorMessage,
                         isDisabled: isDisabled
                     ))
             } else {
                 SecureField(placeholder, text: $text)
                     .modifier(SDTextFieldModifier(
+                        text: text,
                         errorMessage: errorMessage,
                         isDisabled: isDisabled
                     ))
@@ -78,12 +80,13 @@ public struct SDTextField: View {
 }
 
 struct SDTextFieldModifier: ViewModifier {
-
+    
     @FocusState private var isFocusing: Bool
-
+    
+    var text: String
     var errorMessage: String
     var isDisabled: Bool
-
+    
     func body(content: Content) -> some View {
         content
             .autocapitalization(.none)
@@ -100,9 +103,9 @@ struct SDTextFieldModifier: ViewModifier {
             .disabled(isDisabled)
             .focused($isFocusing)
     }
-
+    
     private func getTextColor() -> Color {
-        if isDisabled {
+        if isDisabled || text.isEmpty {
             return .GrayScale.gray300
         } else {
             return .GrayScale.gray800
@@ -110,7 +113,7 @@ struct SDTextFieldModifier: ViewModifier {
     }
 
     private func getBackgroundColor() -> Color {
-        if isDisabled {
+        if isDisabled || text.isEmpty {
             return .GrayScale.gray50
         } else {
             return .clear
@@ -118,7 +121,7 @@ struct SDTextFieldModifier: ViewModifier {
     }
 
     private func getStrokeColor() -> Color {
-        if isDisabled {
+        if isDisabled || text.isEmpty {
             return .GrayScale.gray300
         } else if !errorMessage.isEmpty {
             return .System.red400
