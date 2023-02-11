@@ -1,17 +1,15 @@
 import SwiftUI
 
 public struct SDDatePicker: View {
+    @State var date: Date = Date()
     @Binding var text: String
-    @Binding var date: Date
     @Binding var isShow: Bool
 
     public init(
         text: Binding<String>,
-        date: Binding<Date>,
         isShow: Binding<Bool>
     ) {
         self._text = text
-        self._date = date
         self._isShow = isShow
     }
 
