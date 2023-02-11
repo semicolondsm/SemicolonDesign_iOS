@@ -52,6 +52,7 @@ public struct SDDatePicker: View {
                         }
                         Button {
                             text = date.toString("yyyy-MM-dd")
+                            isShow = false
                         } label: {
                             Text("선택하기")
                                 .frame(width: 122, height: 52)
