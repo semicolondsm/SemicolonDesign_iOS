@@ -5,6 +5,16 @@ public struct SDDatePicker: View {
     @Binding var date: Date
     @Binding var isShow: Bool
 
+    public init(
+        text: Binding<String>,
+        date: Binding<Date>,
+        isShow: Binding<Bool>
+    ) {
+        self._text = text
+        self._date = date
+        self._isShow = isShow
+    }
+
     public var body: some View {
         if isShow {
             ZStack {
