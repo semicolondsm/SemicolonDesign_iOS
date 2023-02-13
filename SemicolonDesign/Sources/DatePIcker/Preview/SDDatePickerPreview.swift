@@ -2,14 +2,15 @@ import SwiftUI
 
 struct SDDatePickerPreview: View {
     @State var text: String = ""
-    @State var isShow: Bool = true
+    @State var isShow: Bool = false
 
     var body: some View {
-        ZStack {
-            Color.black.opacity(0.4)
-                .ignoresSafeArea()
-            SDDatePicker(text: $text, isShow: $isShow)
-        }
+        SDTextField(text: $text)
+            .disabled(true)
+            .onTapGesture {
+                self.isShow = true
+            }
+            .sdDatePicker(isPresented: $isShow, date: $text)
     }
 }
 

@@ -79,16 +79,18 @@ class SDDatePickerCoordinator: NSObject, UIPickerViewDelegate, UIPickerViewDataS
             self.days = parent.updateDays()
             pickerView.selectRow(months.count * 5, inComponent: 1, animated: false)
             pickerView.selectRow(days.count * 5, inComponent: 2, animated: false)
+            parent.month = 1
+            parent.day = 1
             pickerView.reloadComponent(2)
         case 1:
             parent.month = months[row % months.count]
             self.days = parent.updateDays()
             pickerView.selectRow(days.count * 5, inComponent: 2, animated: false)
+            parent.day = 1
             pickerView.reloadComponent(2)
         default:
             parent.day = days[row % days.count]
         }
-        self.parent.date = "\(parent.year) \(parent.month) \(parent.day)".toDate("yyyy MM dd")
-        print(self.parent.date.toString("yyyy MM dd"))
+        self.parent.date = "\(parent.year)-\(parent.month)-\(parent.day)".toDate("yyyy-MM-dd")
     }
 }
