@@ -11,9 +11,11 @@ struct SDBottomSheetModifier: ViewModifier {
             if isPresented.wrappedValue {
                 Color.black.opacity(0.4)
                     .ignoresSafeArea()
-                VStack {
+                VStack(spacing: 0) {
                     Spacer()
                     SDBottomSheet(isPresented: isPresented, buttons: buttons)
+                    Color.white
+                        .frame(height: 30)
                 }
                 .ignoresSafeArea()
                 .animation(.easeOut, value: isPresented.wrappedValue)

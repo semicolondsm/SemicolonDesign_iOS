@@ -24,12 +24,12 @@ struct SDBottomSheet: View {
                         Spacer()
                     }
                 }
-                .padding(.bottom, 26)
+                .padding(.top, 26)
             }
         }
         .foregroundColor(.black)
         .padding(.leading, 29)
-        .padding(.top, 38)
+        .padding(.top, 12)
         .padding(.bottom, 4)
         .background(Color.white)
         .cornerRadius(16, [.topLeft, .topRight])
