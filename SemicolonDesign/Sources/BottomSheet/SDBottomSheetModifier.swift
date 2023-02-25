@@ -15,7 +15,7 @@ struct SDBottomSheetModifier: ViewModifier {
                     Spacer()
                     Color.white
                         .edgesIgnoringSafeArea(.bottom)
-                        .frame(height: CGFloat(buttons.count * 15))
+                        .frame(height: CGFloat(40))
                 }
                 VStack(spacing: 0) {
                     Spacer()
