@@ -14,7 +14,7 @@ struct CalendarCell: View {
                 type: .body3,
                 textColor: textColor(type: checkMonthType().monthType)
             )
-            .frame(width: 36, height: 36)
+            .frame(width: checkSize(), height: checkSize())
             .background(backgroundColor(type: checkMonthType().monthType))
             .cornerRadius(18)
             .overlay(
@@ -51,10 +51,17 @@ struct CalendarCell: View {
     }
     func borderColor(type: MonthType) -> Color {
         return specialDate.filter {
-            $0.toString("yyyy MM") == date.toString("yyyy MM")
+            $0.toString("yyyy MM") == date.toString("yyyy MM") && $0.toString("dd") != date.toString("dd")
         }
         .map { Int($0.toString("d")) }
         .contains { $0 == count - startingSpaces } ? .Primary.purple100 : .white
+    }
+    func checkSize() -> CGFloat {
+        specialDate.filter {
+            $0.toString("yyyy MM") == date.toString("yyyy MM") && $0.toString("dd") != date.toString("dd")
+        }
+        .map { Int($0.toString("d")) }
+        .contains { $0 == count - startingSpaces } ? 34 : 36
     }
 }
 
