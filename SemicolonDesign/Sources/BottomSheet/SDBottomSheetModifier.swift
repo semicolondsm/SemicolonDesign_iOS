@@ -9,19 +9,7 @@ struct SDBottomSheetModifier: ViewModifier {
         ZStack {
             content
             if isPresented.wrappedValue {
-                Color.black.opacity(0.4)
-                    .ignoresSafeArea()
-                VStack {
-                    Spacer()
-                    Color.white
-                        .edgesIgnoringSafeArea(.bottom)
-                        .frame(height: CGFloat(40))
-                }
-                VStack(spacing: 0) {
-                    Spacer()
-                    SDBottomSheet(isPresented: isPresented, buttons: buttons)
-                }
-                .animation(.easeOut, value: isPresented.wrappedValue)
+                SDBottomSheet(isPresented: isPresented, buttons: buttons)
             }
         }
     }
