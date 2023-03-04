@@ -1,28 +1,22 @@
 import SwiftUI
 
-public struct SDDatePicker: View {
+struct SDTimePicker: View {
     @State var date: Date = Date()
     @Binding var text: String
-    @Binding var isShow: Bool
+    @Binding var isPresented: Bool
 
-    public init(
-        text: Binding<String>,
-        isShow: Binding<Bool>
-    ) {
+    init(text: Binding<String>, isPresented: Binding<Bool>) {
         self._text = text
-        self._isShow = isShow
+        self._isPresented = isPresented
     }
 
-    public var body: some View {
-        if isShow {
+    var body: some View {
+        if isPresented {
             ZStack {
-                SDDatePickerRepresentable(date: $date)
+                SDTimePickerRepresentable(date: $date)
                     .padding(.bottom, 80)
-                VStack(spacing: 0) {
-                    HStack(spacing: 10) {
-                        Color.Primary.purple400
-                            .frame(width: 60, height: 2)
-                            .cornerRadius(2)
+                VStack {
+                    HStack(spacing: 30) {
                         Color.Primary.purple400
                             .frame(width: 60, height: 2)
                             .cornerRadius(2)
@@ -30,11 +24,8 @@ public struct SDDatePicker: View {
                             .frame(width: 60, height: 2)
                             .cornerRadius(2)
                     }
-                    .padding(.bottom, 40)
-                    HStack(spacing: 10) {
-                        Color.Primary.purple400
-                            .frame(width: 60, height: 2)
-                            .cornerRadius(2)
+                    .padding(.bottom, 30)
+                    HStack(spacing: 30) {
                         Color.Primary.purple400
                             .frame(width: 60, height: 2)
                             .cornerRadius(2)
@@ -48,7 +39,7 @@ public struct SDDatePicker: View {
                     Spacer()
                     HStack(spacing: 12) {
                         Button {
-                            isShow = false
+                            isPresented = false
                         } label: {
                             Text("취소하기")
                                 .frame(width: 122, height: 52)
@@ -57,8 +48,8 @@ public struct SDDatePicker: View {
                                 .foregroundColor(.GrayScale.gray700)
                         }
                         Button {
-                            text = date.toString("yyyy-MM-dd")
-                            isShow = false
+                            text = date.toString("HH:mm")
+                            isPresented = false
                         } label: {
                             Text("선택하기")
                                 .frame(width: 122, height: 52)
@@ -70,16 +61,15 @@ public struct SDDatePicker: View {
                     .padding(.bottom, 20)
                 }
             }
-            .frame(width: 296, height: 300)
+            .frame(height: 300)
             .background(Color.white)
             .cornerRadius(12)
         }
-
     }
 }
 
-struct SDDatePicker_Previews: PreviewProvider {
+struct SDTimePicer_Previews: PreviewProvider {
     static var previews: some View {
-        SDDatePickerPreview()
+        SDTimePickerPreview()
     }
 }
