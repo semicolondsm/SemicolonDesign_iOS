@@ -11,7 +11,7 @@ struct SDTimePickerRepresentable: UIViewRepresentable {
         return SDTimePickerCoordinator(
             self,
             hour: Array(0...23),
-            minute: Array(0...59)
+            minute: [0, 10, 20, 30, 40, 50]
         )
     }
 
@@ -29,7 +29,7 @@ struct SDTimePickerRepresentable: UIViewRepresentable {
             animated: false
         )
         pickerView.selectRow(
-            minute.firstIndex(of: self.minute)! + (minute.count * 5),
+            minute.firstIndex { $0 >= self.minute }! + (minute.count * 5),
             inComponent: 1,
             animated: false
         )
