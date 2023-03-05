@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SDTimePickerRepresentable: UIViewRepresentable {
     @Binding var date: Date
+    @Binding var currentDate: Date
     @State var hour = Int(Date().toString("HH")) ?? 0
     @State var minute = Int(Date().toString("mm")) ?? 0
 
@@ -26,7 +27,7 @@ struct SDTimePickerRepresentable: UIViewRepresentable {
 
         if self.minute > 50 {
             pickerView.selectRow(
-                hour.firstIndex(of: String(self.hour))! + 1 + (hour.count * 5),
+                hour.firstIndex(of: String(self.hour + 1)) ?? 0 + (hour.count * 5),
                 inComponent: 0,
                 animated: false
             )

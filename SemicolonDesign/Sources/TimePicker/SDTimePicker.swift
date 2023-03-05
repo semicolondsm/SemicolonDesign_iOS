@@ -2,18 +2,25 @@ import SwiftUI
 
 struct SDTimePicker: View {
     @State var date: Date = Date()
-    @Binding var text: String
+    @State var currentDate: Date = Date()
+    @Binding var currentTime: String
+    @Binding var time: String
     @Binding var isPresented: Bool
 
-    init(text: Binding<String>, isPresented: Binding<Bool>) {
-        self._text = text
+    init(
+        currentTime: Binding<String>,
+        time: Binding<String>,
+        isPresented: Binding<Bool>
+    ) {
+        self._currentTime = currentTime
+        self._time = time
         self._isPresented = isPresented
     }
 
     var body: some View {
         if isPresented {
             ZStack {
-                SDTimePickerRepresentable(date: $date)
+                SDTimePickerRepresentable(date: $date, currentDate: $currentDate)
                     .padding(.bottom, 80)
                 VStack {
                     HStack(spacing: 30) {
@@ -48,7 +55,8 @@ struct SDTimePicker: View {
                                 .foregroundColor(.GrayScale.gray700)
                         }
                         Button {
-                            text = date.toString("HH:mm")
+                            time = date.toString("HH:mm")
+                            currentTime = currentDate.toString("HH:mm")
                             isPresented = false
                         } label: {
                             Text("선택하기")

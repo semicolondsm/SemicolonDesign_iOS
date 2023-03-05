@@ -60,6 +60,13 @@ class SDTimePickerCoordinator: NSObject, UIPickerViewDelegate, UIPickerViewDataS
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
+            if parent.minute > 50 {
+                parent.date = "\(parent.hour + 1):00".toDate("HH:mm")
+                parent.currentDate = "\(parent.hour + 1):00".toDate("HH:mm")
+            } else {
+                parent.date = "\(parent.hour):\((self.minute.first { Int($0)! >= parent.minute } ?? "00"))".toDate("HH:mm")
+                parent.currentDate = "\(parent.hour):\((self.minute.first { Int($0)! >= parent.minute } ?? "00"))".toDate("HH:mm")
+            }
             return hour.count * 10
         default:
             return minute.count * 10
