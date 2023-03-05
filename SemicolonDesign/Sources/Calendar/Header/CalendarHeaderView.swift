@@ -11,6 +11,7 @@ struct CalendarHeaderView: View {
                     .resizable()
                     .tint(.GrayScale.gray500)
                     .frame(width: 7, height: 13)
+                    .padding(5)
             }
             Text(day.toString("yyyy년 MM월"))
                 .sdText(
@@ -24,6 +25,7 @@ struct CalendarHeaderView: View {
                     .resizable()
                     .tint(.GrayScale.gray500)
                     .frame(width: 7, height: 13)
+                    .padding(5)
             }
         }
     }
