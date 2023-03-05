@@ -10,8 +10,9 @@ struct SDTimePickerRepresentable: UIViewRepresentable {
     func makeCoordinator() -> SDTimePickerCoordinator {
         return SDTimePickerCoordinator(
             self,
-            hour: Array(0...23),
-            minute: [0, 10, 20, 30, 40, 50]
+            hour: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12",
+                  "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
+            minute: ["00", "10", "20", "30", "40", "50"]
         )
     }
 
@@ -24,12 +25,12 @@ struct SDTimePickerRepresentable: UIViewRepresentable {
         let minute = context.coordinator.minute
 
         pickerView.selectRow(
-            hour.firstIndex(of: self.hour)! + (hour.count * 5),
+            hour.firstIndex(of: String(self.hour))! + (hour.count * 5),
             inComponent: 0,
             animated: false
         )
         pickerView.selectRow(
-            minute.firstIndex { $0 >= self.minute }! + (minute.count * 5),
+            minute.firstIndex { Int($0)! >= self.minute }! + (minute.count * 5),
             inComponent: 1,
             animated: false
         )

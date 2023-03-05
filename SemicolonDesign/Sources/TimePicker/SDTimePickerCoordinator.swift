@@ -3,13 +3,13 @@ import UIKit
 class SDTimePickerCoordinator: NSObject, UIPickerViewDelegate, UIPickerViewDataSource {
 
     private let parent: SDTimePickerRepresentable
-    let hour: [Int]
-    let minute: [Int]
+    let hour: [String]
+    let minute: [String]
 
     init(
         _ parent: SDTimePickerRepresentable,
-        hour: [Int],
-        minute:[Int]
+        hour: [String],
+        minute:[String]
     ) {
         self.parent = parent
         self.hour = hour
@@ -69,12 +69,10 @@ class SDTimePickerCoordinator: NSObject, UIPickerViewDelegate, UIPickerViewDataS
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component {
         case 0:
-            parent.hour = hour[row % hour.count]
-            pickerView.reloadComponent(2)
+            parent.hour = Int(hour[row % hour.count]) ?? 0
         default:
-            parent.minute = minute[row % minute.count]
-            pickerView.reloadComponent(2)
+            parent.minute = Int(minute[row % minute.count]) ?? 0
         }
-        self.parent.date = "\(parent.hour):\(parent.minute)".toDate("hh:mm")
+        self.parent.date = "\(parent.hour):\(parent.minute)".toDate("HH:mm")
     }
 }
