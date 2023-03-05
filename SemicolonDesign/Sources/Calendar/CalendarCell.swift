@@ -15,12 +15,11 @@ struct CalendarCell: View {
                 textColor: textColor(type: checkMonthType().monthType)
             )
             .frame(width: checkSize(), height: checkSize())
-            .background(backgroundColor(type: checkMonthType().monthType))
+            .background(backgroundColor())
             .cornerRadius(18)
             .overlay(
                 RoundedRectangle(cornerRadius: 18)
-                    .stroke(borderColor(
-                        type: checkMonthType().monthType),
+                    .stroke(borderColor(),
                             lineWidth: 2
                     )
             )
@@ -34,7 +33,7 @@ struct CalendarCell: View {
             return .GrayScale.gray500
         }
     }
-    func backgroundColor(type: MonthType) -> Color {
+    func backgroundColor() -> Color {
         return Int(date.toString("d")) == count - startingSpaces && Date().toString("yyyy MM") == date.toString("yyyy MM") ? .Primary.purple400 : .white
     }
     func checkMonthType() -> Month {
@@ -49,9 +48,9 @@ struct CalendarCell: View {
             return Month(monthType: .current, day: day)
         }
     }
-    func borderColor(type: MonthType) -> Color {
+    func borderColor() -> Color {
         return specialDate.filter {
-            $0.toString("yyyy MM") == date.toString("yyyy MM") && $0.toString("dd") != date.toString("dd")
+            $0.toString("yyyy MM") == date.toString("yyyy MM") && $0.toString("yyyy MM dd") != Date().toString("yyyy MM dd")
         }
         .map { Int($0.toString("d")) }
         .contains { $0 == count - startingSpaces } ? .Primary.purple100 : .white
