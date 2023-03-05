@@ -7,8 +7,8 @@ struct SDTimePickerPreview: View {
 
     var body: some View {
         HStack {
-            SDTextField(text: $currentTime, isDisabled: true)
-            SDTextField(text: $time, isDisabled: true)
+            SDTextField(text: $currentTime)
+            SDTextField(text: $time)
         }
         .sdTimePicker(isPresented: $isPresented, currentDate: $currentTime, date: $time)
         .onTapGesture {

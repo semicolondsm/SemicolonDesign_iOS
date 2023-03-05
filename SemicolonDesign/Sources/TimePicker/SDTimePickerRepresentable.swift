@@ -27,13 +27,13 @@ struct SDTimePickerRepresentable: UIViewRepresentable {
 
         if self.minute > 50 {
             pickerView.selectRow(
-                hour.firstIndex(of: String(self.hour + 1)) ?? 0 + (hour.count * 5),
+                hour.firstIndex(of: self.hour < 10 ? "0\(self.hour+1)" : "\(self.hour+1)") ?? 0 + (hour.count * 5),
                 inComponent: 0,
                 animated: false
             )
         } else {
             pickerView.selectRow(
-                hour.firstIndex(of: String(self.hour))! + (hour.count * 5),
+                hour.firstIndex(of: self.hour < 10 ? "0\(self.hour)" : "\(self.hour)") ?? 0 + (hour.count * 5),
                 inComponent: 0,
                 animated: false
             )
