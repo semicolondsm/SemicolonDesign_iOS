@@ -1,7 +1,9 @@
 import SwiftUI
 
 public extension View {
-    func sdBottomSheet(isPresented: Binding<Bool>, buttons: [(text: String, action: () -> Void)]) -> some View {
-        self.modifier(SDBottomSheetModifier(isPresented: isPresented, buttons: buttons))
+    func sdBottomSheet(isPresented: Binding<Bool>, sdBottomSheet: @escaping() -> SDBottomSheet) -> some View {
+        self.fullScreenCover(isPresented: isPresented) {
+            sdBottomSheet()
+        }
     }
 }

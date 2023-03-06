@@ -1,18 +1,17 @@
 import SwiftUI
 
-struct SDBottomSheet: View {
-    @Binding var isPresented: Bool
+public struct SDBottomSheet: View {
+
+    @Environment(\.presentationMode) var presentationMode
     var buttons: [(text: String, action: () -> Void)]
 
-    init(
-        isPresented: Binding<Bool>,
+    public init(
         buttons: [(text: String, action: () -> Void)]
     ) {
         self.buttons = buttons
-        self._isPresented = isPresented
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack(alignment: .bottom) {
             Color.black.opacity(0.4).ignoresSafeArea()
             VStack {
@@ -24,7 +23,7 @@ struct SDBottomSheet: View {
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(buttons, id: \.text) { button in
                     Button{
-                        self.isPresented = false
+                        self.presentationMode.wrappedValue.dismiss()
                         button.action()
                     } label: {
                         HStack {
@@ -43,8 +42,9 @@ struct SDBottomSheet: View {
             .cornerRadius(16, [.topLeft, .topRight])
         }
         .onTapGesture {
-            self.isPresented = false
+            self.presentationMode.wrappedValue.dismiss()
         }
+        .background(Background())
     }
 }
 

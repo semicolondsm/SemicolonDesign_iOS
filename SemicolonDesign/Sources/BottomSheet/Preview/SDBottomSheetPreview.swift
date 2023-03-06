@@ -9,10 +9,14 @@ struct SDBottomSheetPreview: View {
             } label: {
                 Text("Test BottomSheet")
             }
-            .sdBottomSheet(isPresented: $isPresented, buttons: [
-                (text: "수정하기", action: { print("!!!!!") }),
-                (text: "삭제하기", action: { print("반가워요") })
-            ])
+            .sdBottomSheet(isPresented: $isPresented, sdBottomSheet: {
+                SDBottomSheet(buttons: [
+                    (text: "수정하기", action: { }),
+                    (text: "삭제하기", action: { })
+                ])
+            })
+            .navigationTitle("바텀시트")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
