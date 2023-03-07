@@ -3,6 +3,8 @@ import SwiftUI
 public struct SDBottomSheet: View {
 
     @Environment(\.presentationMode) var presentationMode
+    @State private var animate = false
+
     var buttons: [(text: String, action: () -> Void)]
 
     public init(
@@ -13,7 +15,8 @@ public struct SDBottomSheet: View {
 
     public var body: some View {
         ZStack(alignment: .bottom) {
-            Color.black.opacity(0.4).ignoresSafeArea()
+            Color.black.opacity(0.2).ignoresSafeArea()
+                .opacity(animate ? 1.0 : 0.0)
             VStack {
                 Spacer()
                 Color.white
@@ -23,7 +26,7 @@ public struct SDBottomSheet: View {
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(buttons, id: \.text) { button in
                     Button{
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.dismissBottomSheet()
                         button.action()
                     } label: {
                         HStack {
@@ -41,10 +44,20 @@ public struct SDBottomSheet: View {
             .background(Color.white)
             .cornerRadius(16, [.topLeft, .topRight])
         }
+        .onAppear {
+            withAnimation(.default.speed(0.4)) {
+                animate = true
+            }
+        }
         .onTapGesture {
-            self.presentationMode.wrappedValue.dismiss()
+            self.dismissBottomSheet()
         }
         .background(Background())
+    }
+
+    private func dismissBottomSheet() {
+        self.animate = false
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
