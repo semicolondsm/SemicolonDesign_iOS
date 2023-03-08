@@ -28,7 +28,9 @@ public struct FillButton: View {
                 .background(isDisabled ? Color.Primary.purple50 : Color.Primary.purple400)
         }
         .cornerRadius(type == .rounded ? 12: 0)
-        .padding(type == .rounded ? 16: 0)
+        .padding([.bottom, .leading, .trailing], type == .rounded ? 16 : 0)
+        .background(Color.white)
+        .padding(.top, type == .rounded ? 16: 0)
         .disabled(isDisabled)
     }
 }
