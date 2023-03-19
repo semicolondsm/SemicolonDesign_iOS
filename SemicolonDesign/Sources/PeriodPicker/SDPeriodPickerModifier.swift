@@ -4,7 +4,7 @@ struct SDPeriodPickerModifier: ViewModifier {
 
     var isPresented: Binding<Bool>
 
-    var period: Binding<Int>
+    var period: Binding<Int?>
 
     func body(content: Content) -> some View {
         ZStack {

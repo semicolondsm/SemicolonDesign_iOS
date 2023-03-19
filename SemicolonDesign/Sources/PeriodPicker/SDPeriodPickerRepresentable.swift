@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SDPeriodPickerRepresentable: UIViewRepresentable {
-    @Binding var period: Int
+    @Binding var period: Int?
 
     let pickerView = UIPickerView(frame: .init(x: 0, y: 0, width: 120, height: 122))
 
@@ -20,7 +20,7 @@ struct SDPeriodPickerRepresentable: UIViewRepresentable {
         let period = context.coordinator.period
 
         pickerView.selectRow(
-            (period.firstIndex(of: self.period)! + (period.count * 5)),
+            (period.firstIndex(of: self.period ?? 1)! + (period.count * 5)),
             inComponent: 0,
             animated: false
         )

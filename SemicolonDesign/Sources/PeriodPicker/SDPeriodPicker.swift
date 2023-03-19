@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct SDPeriodPicker: View {
-    @State var periodValue: Int = 1
-    @Binding var period: Int
+    @State var periodValue: Int? = nil
+    @Binding var period: Int?
     @Binding var isShow: Bool
 
     var body: some View {
@@ -33,7 +33,7 @@ struct SDPeriodPicker: View {
                                 .foregroundColor(.GrayScale.gray700)
                         }
                         Button {
-                            period = periodValue
+                            period = periodValue ?? 1
                             isShow = false
                         } label: {
                             Text("선택하기")
