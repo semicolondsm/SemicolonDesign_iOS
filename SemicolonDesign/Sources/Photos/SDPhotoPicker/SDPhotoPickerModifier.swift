@@ -34,8 +34,8 @@ struct SDPhotoPickerModifier: ViewModifier {
                         .accentColor(.Primary.purple400)
                 }
             }
-            .sdErrorAlert(isPresented: self.$isErrorAlertPresented) {
-                SDErrorAlert(errerMessage: "이미지 업로드에 실패하였습니다.")
+            .sdOkayAlert(isPresented: self.$isErrorAlertPresented) {
+                SDOkayAlert(title: "문제가 발생했습니다", message: "에러를 확인해주세요.")
             }
     }
 }

@@ -1,14 +1,17 @@
 import SwiftUI
 
 struct SDPeriodPicker: View {
-    @State var periodValue: Int? = nil
+    @State var periodValue: Int?
     @Binding var period: Int?
     @Binding var isShow: Bool
 
     var body: some View {
         if isShow {
             ZStack {
-                SDPeriodPickerRepresentable(period: $periodValue)
+                SDPeriodPickerRepresentable(
+                    defaultPeriod: $period,
+                    period: $periodValue
+                )
                     .padding(.bottom, 80)
                 VStack(spacing: 0) {
                     Color.Primary.purple400
@@ -51,7 +54,6 @@ struct SDPeriodPicker: View {
             .cornerRadius(12)
         }
     }
-
 }
 
 struct SDPeriodPicker_Previews: PreviewProvider {

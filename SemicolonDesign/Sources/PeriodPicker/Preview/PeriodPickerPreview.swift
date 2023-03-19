@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SDPeriodPickerPreview: View {
     @State var text: String = ""
-    @State var period: Int? = nil
+    @State var period: Int?
     @State var isPresented: Bool = false
     var body: some View {
         SDTextField(title: "", text: $text, isDisabled: true)
