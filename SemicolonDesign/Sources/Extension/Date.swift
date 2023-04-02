@@ -28,11 +28,11 @@ extension Date {
         return (Calendar.current.dateComponents([.weekday], from: self).weekday ?? 0) - 1
     }
     // 다음달로 값을 변환하는 함수
-    mutating func nextMonth() {
+    mutating func setNextMonth() {
         self = Calendar.current.date(byAdding: .month, value: 1, to: self) ?? Date()
     }
     // 저번달로 값을 변환하는 함수
-    mutating func lastMonth() {
+    mutating func setLastMonth() {
         self = Calendar.current.date(byAdding: .month, value: -1, to: self) ?? Date()
     }
     func lastMonth() -> Date {

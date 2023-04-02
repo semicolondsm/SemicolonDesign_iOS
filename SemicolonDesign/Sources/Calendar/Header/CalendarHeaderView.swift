@@ -5,7 +5,7 @@ struct CalendarHeaderView: View {
     var body: some View {
         HStack(spacing: 22) {
             Button {
-                day.lastMonth()
+                day.setLastMonth()
             } label: {
                 Image(systemName: "chevron.left")
                     .resizable()
@@ -19,7 +19,7 @@ struct CalendarHeaderView: View {
                     textColor: .GrayScale.gray900
                 )
             Button {
-                day.nextMonth()
+                day.setNextMonth()
             } label: {
                 Image(systemName: "chevron.right")
                     .resizable()
