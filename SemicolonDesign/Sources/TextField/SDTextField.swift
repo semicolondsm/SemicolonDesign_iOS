@@ -5,6 +5,7 @@ public struct SDTextField: View {
     let title: String
     let placeholder: String
     let help: String
+    var isImportant: Bool
     @Binding var text: String
     var errorMessage: String
     var isDisabled: Bool
@@ -14,6 +15,7 @@ public struct SDTextField: View {
         title: String = "",
         placeholder: String = "",
         help: String = "",
+        isImportant: Bool = false,
         text: Binding<String>,
         errorMessage: String = "",
         isDisabled: Bool = false,
@@ -22,6 +24,7 @@ public struct SDTextField: View {
         self.title = title
         self.placeholder = placeholder
         self.help = help
+        self.isImportant = isImportant
         self._text = text
         self.errorMessage = errorMessage
         self.isDisabled = isDisabled
@@ -32,8 +35,13 @@ public struct SDTextField: View {
         VStack(alignment: .leading, spacing: 0) {
 
             if !title.isEmpty {
-                Text(title).sdText(type: .body4, textColor: getTitleColor())
-                    .padding(.bottom, 8)
+                HStack(alignment: .top, spacing: 0) {
+                    Text(title)
+                        .sdText(type: .body4, textColor: getTitleColor())
+                        .padding(.bottom, 8)
+                    Text(isImportant ? "*" : "")
+                        .foregroundColor(Color.System.red400)
+                }
             }
             
             if !isSecure {
@@ -94,10 +102,12 @@ struct SDTextFieldModifier: ViewModifier {
             .font(.system(size: 16))
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
             .frame(height: 44, alignment: .center)
-            .overlay { RoundedRectangle(cornerRadius: 8).stroke(
-                getStrokeColor()
-            )}
             .background(getBackgroundColor())
+            .cornerRadius(8)
+            .overlay {
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(getStrokeColor())
+            }
             .foregroundColor(getTextColor())
             .accentColor(.GrayScale.gray800)
             .disabled(isDisabled)
