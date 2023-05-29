@@ -9,8 +9,8 @@ struct SDPeriodPicker: View {
         if isShow {
             ZStack {
                 SDPeriodPickerRepresentable(
-                    defaultPeriod: $period,
-                    period: $currentPeriod
+                    currentPeriod: $currentPeriod,
+                    period: $period
                 )
                     .padding(.bottom, 80)
                 VStack(spacing: 0) {
@@ -36,7 +36,7 @@ struct SDPeriodPicker: View {
                                 .foregroundColor(.GrayScale.gray700)
                         }
                         Button {
-                            period = currentPeriod ?? 1
+                            self.currentPeriod = period
                             isShow = false
                         } label: {
                             Text("선택하기")

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SDPeriodPickerRepresentable: UIViewRepresentable {
-    @Binding var defaultPeriod: Int?
+    @Binding var currentPeriod: Int?
     @Binding var period: Int?
 
     let pickerView = UIPickerView(frame: .init(x: 0, y: 0, width: 120, height: 122))
@@ -22,11 +22,11 @@ struct SDPeriodPickerRepresentable: UIViewRepresentable {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(1), execute: {
             pickerView.selectRow(
-                (period.firstIndex(of: self.defaultPeriod ?? 1)! + (period.count * 5)),
+                (period.firstIndex(of: self.currentPeriod ?? 1)! + (period.count * 5)),
                 inComponent: 0,
                 animated: false
             )
-            self.period = defaultPeriod
+            self.period = currentPeriod
         })
 
         pickerView.frame.size.height = 122
