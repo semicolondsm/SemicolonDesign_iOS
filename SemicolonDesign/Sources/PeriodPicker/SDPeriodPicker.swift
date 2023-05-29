@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct SDPeriodPicker: View {
-    @State var periodValue: Int?
     @Binding var period: Int?
+    @Binding var currentPeriod: Int?
     @Binding var isShow: Bool
 
     var body: some View {
@@ -10,7 +10,7 @@ struct SDPeriodPicker: View {
             ZStack {
                 SDPeriodPickerRepresentable(
                     defaultPeriod: $period,
-                    period: $periodValue
+                    period: $currentPeriod
                 )
                     .padding(.bottom, 80)
                 VStack(spacing: 0) {
@@ -36,7 +36,7 @@ struct SDPeriodPicker: View {
                                 .foregroundColor(.GrayScale.gray700)
                         }
                         Button {
-                            period = periodValue ?? 1
+                            period = currentPeriod ?? 1
                             isShow = false
                         } label: {
                             Text("선택하기")
