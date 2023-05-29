@@ -11,7 +11,7 @@ struct SDPeriodPickerPreview: View {
             .onTapGesture {
                 self.isPresented = true
             }
-            .onChange(of: currentPeriod, perform: { newValue in
+            .onChange(of: period, perform: { newValue in
                 text = "\(newValue ?? 1)교시"
             })
             .sdPeriodPicker(isPresented: $isPresented, currentPeriod: $currentPeriod, period: $period)
