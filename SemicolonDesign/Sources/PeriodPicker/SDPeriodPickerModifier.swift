@@ -16,5 +16,8 @@ struct SDPeriodPickerModifier: ViewModifier {
                 SDPeriodPicker(period: self.period, currentPeriod: self.currentPeriod, isShow: self.isPresented)
             }
         }
+        .onDisappear {
+            period.wrappedValue = nil
+        }
     }
 }
