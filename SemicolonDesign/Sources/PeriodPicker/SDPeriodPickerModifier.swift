@@ -19,6 +19,7 @@ struct SDPeriodPickerModifier: ViewModifier {
         .onChange(of: isPresented.wrappedValue) { newValue in
             if !newValue {
                 period.wrappedValue = nil
+                currentPeriod.wrappedValue = nil
             }
         }
     }
