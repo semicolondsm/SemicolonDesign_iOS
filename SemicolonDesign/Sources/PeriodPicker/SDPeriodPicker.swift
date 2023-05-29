@@ -9,7 +9,6 @@ struct SDPeriodPicker: View {
         if isShow {
             ZStack {
                 SDPeriodPickerRepresentable(
-                    currentPeriod: $currentPeriod,
                     period: $period
                 )
                     .padding(.bottom, 80)
