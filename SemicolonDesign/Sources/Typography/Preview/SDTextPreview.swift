@@ -18,7 +18,7 @@ struct SDTextPreview: View {
                 Text("Body 4").sdText(type: .body4)
             }
             VStack(alignment: .leading) {
-                Text("Caption").sdText(type: .caption)
+                Text("Caption").sdText(type: .caption2)
                     .foregroundColor(.red)
             }
         }

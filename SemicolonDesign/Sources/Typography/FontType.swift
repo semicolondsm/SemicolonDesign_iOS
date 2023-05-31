@@ -14,7 +14,10 @@ public enum FontType {
     case body3
     case body4
 
-    case caption
+    case caption1
+    case caption2
+    case caption3
+    case caption4
 
 }
 
@@ -32,8 +35,9 @@ extension FontType {
 
         case .body1, .body2: return 16
         case .body3, .body4: return 14
-
-        case .caption: return 12
+            
+        case .caption1, .caption2: return 12
+        case .caption3, .caption4: return 10
 
         }
     }
@@ -47,7 +51,8 @@ extension FontType {
         case .body1, .body3: return .medium
         case .body2, .body4: return .regular
 
-        case .caption: return .regular
+        case .caption1, .caption3: return .medium
+        case .caption2, .caption4: return .regular
 
         }
     }
@@ -65,7 +70,8 @@ extension FontType {
         case .body1, .body2: return 24
         case .body3, .body4: return 20
 
-        case .caption: return 18
+        case .caption1, .caption2: return 18
+        case .caption3, .caption4: return 16
 
         }
     }
@@ -78,7 +84,7 @@ extension FontType {
 
         case .body1, .body2, .body3, .body4: return .GrayScale.gray700
 
-        case .caption: return .GrayScale.gray700
+        case .caption1, .caption2, .caption3, .caption4: return .GrayScale.gray700
 
         }
     }

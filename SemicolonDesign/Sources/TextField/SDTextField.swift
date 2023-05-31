@@ -63,11 +63,11 @@ public struct SDTextField: View {
             if !isDisabled {
                 if !errorMessage.isEmpty {
                     Text(errorMessage)
-                        .sdText(type: .caption, textColor: .System.red400)
+                        .sdText(type: .caption2, textColor: .System.red400)
                         .padding(.top, 4)
                 } else if !help.isEmpty {
                     Text(help)
-                        .sdText(type: .caption, textColor: .GrayScale.gray400)
+                        .sdText(type: .caption2, textColor: .GrayScale.gray400)
                         .padding(.top, 4)
                 }
             }
