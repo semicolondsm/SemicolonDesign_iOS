@@ -100,7 +100,7 @@ struct SDTextFieldModifier: ViewModifier {
             .autocapitalization(.none)
             .disableAutocorrection(true)
             .font(.system(size: 16))
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 0))
+            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
             .frame(height: 44, alignment: .center)
             .background(getBackgroundColor())
             .cornerRadius(8)
