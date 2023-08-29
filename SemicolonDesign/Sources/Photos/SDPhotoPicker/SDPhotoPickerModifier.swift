@@ -14,12 +14,14 @@ struct SDPhotoPickerModifier: ViewModifier {
         self.isPresented = isPresented
         self.singleSelection = selection
         self.multipleSelection = nil
+        self.isError = errorAction
     }
 
     init(isPresented: Binding<Bool>, selection: Binding<[UIImage]>, errorAction: (() -> Void)?) {
         self.isPresented = isPresented
         self.singleSelection = nil
         self.multipleSelection = selection
+        self.isError = errorAction
     }
 
     func body(content: Content) -> some View {
