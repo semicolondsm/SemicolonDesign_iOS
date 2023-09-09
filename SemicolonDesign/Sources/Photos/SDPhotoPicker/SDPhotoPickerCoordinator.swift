@@ -29,7 +29,7 @@ extension SDPhotoPickerCoordinator {
 
     private func processSinglePhoto(_ pickerResults: [PHPickerResult]) {
         guard let pickerResult = pickerResults.first else { return }
-        print(pickerResult.itemProvider.suggestedName)
+        print(pickerResult.itemProvider.registeredContentTypes.first)
         pickerResult.itemProvider.loadObject(ofClass: UIImage.self) { image, _ in
             if let image = image as? UIImage {
                 self.parent.singleSelection?.wrappedValue = image
@@ -44,7 +44,7 @@ extension SDPhotoPickerCoordinator {
         var errorCount = 0
 
         pickerResults.enumerated().forEach { pickerResult in
-            debugPrint(pickerResult.element.itemProvider.suggestedName)
+            debugPrint(pickerResult.element.itemProvider.registeredContentTypes)
             pickerResult.element.itemProvider.loadObject(ofClass: UIImage.self) { image, _ in
                 if let image = image as? UIImage {
                     enumeratedSelection.append((pickerResult.offset, image))
