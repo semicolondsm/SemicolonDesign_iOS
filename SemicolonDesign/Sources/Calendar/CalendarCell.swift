@@ -60,13 +60,6 @@ struct CalendarCell: View {
         .map { Int($0.toString("d")) }
         .contains { $0 == count - startingSpaces } ? .Primary.purple100 : .white
     }
-//    func checkSize() -> CGFloat {
-//        specialDate.filter {
-//            $0.toString("yyyy MM") == date.toString("yyyy MM") && $0.toString("dd") != date.toString("dd")
-//        }
-//        .map { Int($0.toString("d")) }
-//        .contains { $0 == count - startingSpaces } ? 34 : 36
-//    }
 }
 
 struct CalendarCell_Previews: PreviewProvider {
